@@ -6,11 +6,11 @@ let cvReg=/(?=Jeffrey)Jeff/;
 
 console.log(cvReg.test(str));
 
-//let cvReg2=/(?!\bJeff)(?=s\b)/g;
-let cvReg2=/(?=s\b)(?!\bJeff)/g;
-let str2="by Jeffs car by Jeffs bag";
+let cvReg2=/\b(Jeff)(?=s\b)/ig;
+//let cvReg2=/(?=s\b)(?!\bJeff)/g;
+let str2="by Jeffs car by jeffs gpds bag";
 
-let str3=str2.replace(cvReg2,function(match) {
-	return "'";
+let str3=str2.replace(cvReg2,function(match,firCon,secCon) {
+	return firCon+"'";
 });
 console.log(str3);
